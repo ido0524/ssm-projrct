@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jdk1">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../java/jdk/jdk1.8" />
+    </SOURCES>
+    <excluded>
+      <root url="jar://$PROJECT_DIR$/../../../java/jdk/jdk1.8/javafx-src.zip!/" />
+    </excluded>
+    <jarDirectory url="file://$PROJECT_DIR$/../../../java/jdk/jdk1.8" recursive="false" type="SOURCES" />
+  </library>
+</component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.RolesMapper">
+    <resultMap id="rolesMap" type="roles">
+        <id property="id" column="id"/>
+        <collection property="permissions" ofType="permission" column="id" select="com.itheima.mapper.PermissionMapper.findPermssionByRoleId" fetchType="lazy"/>
+    </resultMap>
+    <select id="findByUserId" parameterType="string" resultMap="rolesMap">
+      select * from role where id in( select roleid from users_role where userid =#{uid} )
+    </select>
+    <select id="findAll" resultType="roles">
+        select * from role
+    </select>
+</mapper>
